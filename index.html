@@ -43,10 +43,25 @@
     />
     <noscript>
     </noscript>
-    <script type="module" crossorigin src="/shri2025-task/assets/index-Bj98uYb3.js"></script>
+    <script type="module" crossorigin src="/shri2025-task/assets/index-CZCDeydS.js"></script>
     <link rel="stylesheet" crossorigin href="/shri2025-task/assets/index-Cb2h0Goq.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      function countAllNodes(root) {
+        let count = 1;
+        root.childNodes.forEach((child) => {
+          count += countAllNodes(child);
+        });
+        return count;
+      }
+
+      setTimeout(() => {
+        const root = document.getElementById("root");
+        const totalNodes = countAllNodes(root) - 1;
+        console.log("Всего узлов в DOM:", totalNodes);
+      }, 5000);
+    </script>
   </body>
 </html>
